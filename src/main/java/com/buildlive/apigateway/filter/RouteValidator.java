@@ -1,5 +1,6 @@
 package com.buildlive.apigateway.filter;
 
+import org.slf4j.Logger;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,8 @@ public class RouteValidator {
 
     public static final List<String> openApiEndpoints = List.of(
             "/api/v1/auth/register",
-            "api/v1/auth/token",
+            "/api/v1/auth/user-login",
+            "/api/v1/auth/verify-otp",
             "/eureka"
     );
 
@@ -19,5 +21,6 @@ public class RouteValidator {
             request -> openApiEndpoints
                     .stream()
                     .noneMatch(uri-> request.getURI().getPath().contains(uri));
+
 
 }

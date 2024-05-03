@@ -98,7 +98,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>buildLive-apigateway</finalName>
+		<finalName>buildlive-apigateway</finalName>
 	</build>
 
 </project>

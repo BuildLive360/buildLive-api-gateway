@@ -52,6 +52,6 @@ spring:
     active: "gateway"
   config:
     import: "optional:configserver:http://13.127.132.74:8888"
-  zipkin:
-    base:
-      url: http://127.0.0.1:9411/
+#  zipkin:
+#    base:
+#      url: http://127.0.0.1:9411/

@@ -113,12 +113,12 @@ spring:
           filters:
             - AuthenticationFilter
 
-        - id: user-service
-          uri: http://13.127.132.74:8050
-          predicates:
-            - Path=/api/v1/user/**
-          filters:
-            - AuthenticationFilter
+#        - id: user-service
+#          uri: http://13.127.132.74:8050
+#          predicates:
+#            - Path=/api/v1/user/**
+#          filters:
+#            - AuthenticationFilter
 
 eureka:
   client:

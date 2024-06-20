@@ -1,68 +1,9 @@
-#server:
-#  port: 8080
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone : http://localhost:8761/eureka/
-#spring:
-#  application:
-#    name: GATEWAY
-#  cloud:
-#    gateway:
-#      default-filters:
-#        - DedupeResponseHeader=Access-Control-Allow-Origin
-#      globalcors:
-#          corsConfigurations:
-#            '[/**]':
-#              allowedOrigins:
-#                - 'http://localhost:4200'
-#              allowedMethods:
-#                - GET
-#                - POST
-#                - PUT
-#                - DELETE
-#              allowedHeaders:
-#                - "*"
-#              allowCredentials: true
-#
-#      routes:
-#        - id: project-service
-#          uri: lb://PROJECT-SERVICE
-#          predicates:
-#            - Path=/api/v1/project/**
-#          filters:
-#            - AuthenticationFilter
-#
-#        - id: auth-service
-#          uri: lb://AUTH-SERVICE
-#          predicates:
-#            - Path=/api/v1/auth/**
-#
-#        - id: company-service
-#          uri: lb://COMPANY-SERVICE
-#          predicates:
-#            - Path=/api/v1/company/**
-#          filters:
-#            - AuthenticationFilter
 
-#spring:
-#  application:
-#    name: "api"
-#  profiles:
-#    active: "gateway"
-#  config:
-#    import: "optional:configserver:http://13.127.132.74:8888"
-#  zipkin:
-#    base:
-#      url: http://127.0.0.1:9411/
 
 server:
   port: 7070
 
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://54.169.219.205:8761/eureka/
+
 
 eureka:
   instance:
@@ -70,7 +11,7 @@ eureka:
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://13.127.132.74:8761/eureka/
+      defaultZone: http://13.232.2.228:8761/eureka/
     healthcheck:
       enabled: true
     lease:
@@ -81,93 +22,7 @@ eureka:
 
 
 
-#server:
-#  port: 7070
-#
-#
-#spring:
-#  application:
-#    name: API-GATEWAY
 
-
-#    gateway:
-#      discovery:
-#        locator:
-#          enabled: true
-#      globalcors:
-#        corsConfigurations:
-#          '[/**]':
-#            allowedOrigins:
-#              - 'http://localhost:4200'
-#            allowedMethods:
-#              - GET
-#              - POST
-#              - PUT
-#              - DELETE
-#            allowedHeaders:
-#              - "*"
-#            allowCredentials: true
-#spring:
-#  application:
-#    name: API-GATEWAY
-##  config:
-##    import: "optional:configserver:http://54.169.219.205:8088"
-#  cloud:
-#    gateway:
-#      globalcors:
-#        corsConfigurations:
-#          '[/**]':
-#            #            allowedOrigins: "https://bsusvia-angular-frontend.vercel.app"
-#            allowedOrigins: "*"
-#            allowedHeaders: "*"
-#            allowedMethods:
-#              - GET
-#              - POST
-#              - DELETE
-#
-#
-#      routes:
-#        - id: project-service
-#          uri: lb://PROJECT-SERVICE
-#          predicates:
-#            - Path=/api/v1/project/**
-#          filters:
-#            - AuthenticationFilter
-#
-#        - id: auth-service
-#          uri: lb://AUTH-SERVICE
-#          predicates:
-#            - Path=/api/v1/auth/**
-#        #          filters:
-#        #            - AuthenticationFilter
-#
-#        - id: company-service
-#          uri: lb://COMPANY-SERVICE
-#          predicates:
-#            - Path=/api/v1/company/**
-#          filters:
-#            - AuthenticationFilter
-#
-#        - id: admin-service
-#          uri: lb://ADMIN-SERVICE
-#          predicates:
-#            - Path=/api/v1/admin/**
-#          filters:
-#            - AuthenticationFilter
-
-#        - id: user-service
-#          uri: http://13.127.132.74:8050
-#          predicates:
-#            - Path=/api/v1/user/**
-#          filters:
-#            - AuthenticationFilter
-
-#eureka:
-#  client:
-#    fetch-registry: true
-#    register-with-eureka: true
-#    service-url:
-#      defaultZone: ${EUREKA_SERVER_ADDRESS:http://13.127.132.74:8761/eureka}
 
 spring:
   application:

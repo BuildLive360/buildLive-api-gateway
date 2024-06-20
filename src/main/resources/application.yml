@@ -185,6 +185,7 @@ spring:
               - GET
               - POST
               - DELETE
+              - PUT
 
       routes:
         - id: project-service

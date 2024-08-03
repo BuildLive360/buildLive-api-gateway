@@ -11,7 +11,7 @@ eureka:
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://13.232.2.228:8761/eureka/
+      defaultZone: http://3.132.56.186:8761/eureka/
     healthcheck:
       enabled: true
     lease:
@@ -77,3 +77,9 @@ spring:
              - Path=/api/v1/user/**
           filters:
               - AuthenticationFilter
+
+
+
+
+
+
